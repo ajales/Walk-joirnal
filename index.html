@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walk Journal</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Walk Journal</h1>
+
+<form id="walkForm">
+  <label>Date:
+    <input type="date" id="walkDate" required>
+  </label>
+
+  <div id="sectionsContainer"></div>
+  <button type="button" id="addSection">Add Section</button>
+  <button type="submit">Save Walk</button>
+</form>
+
+<h2>Past Walks</h2>
+<div id="history"></div>
+
+<button id="exportCsv">Export All Walks (CSV)</button>
+
+<!-- Section Viewer -->
+<div id="sectionViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:1000; overflow:hidden;">
+  <button id="addSectionViewerBtn" style="position:absolute; top:10px; left:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Add Section</button>
+  <button id="closeSectionViewer" style="position:absolute; top:10px; right:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Close</button>
+  <div id="sectionContainer" style="display:flex; width:100%; height:100%; transition:transform 0.3s ease;"></div>
+</div>
+
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('Service Worker Registered'));
+}
+</script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-const cacheName = 'walk-journal-v3';
+const cacheName = 'walk-journal-final-v1';
 const filesToCache = ['/', '/index.html', '/style.css', '/app.js', '/manifest.json'];
 
 self.addEventListener('install', e => {

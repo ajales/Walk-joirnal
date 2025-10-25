@@ -21,3 +21,13 @@ button { margin-top: 10px; padding: 10px 15px; background: #4CAF50; color: white
 }
 .walk-item.swiping { transition: none; }
 .section-card { min-width: 100%; padding: 20px; box-sizing: border-box; overflow-y: auto; }
+/* Overlays */
+.overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); z-index: 2000; display:flex; align-items:flex-start; justify-content:center; padding:20px; box-sizing:border-box; }
+.overlay .overlay-content { background:white; width:100%; max-width:720px; padding:15px; border-radius:6px; max-height:90vh; overflow:auto; }
+.week-block { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+.day-block { margin-left: 15px; }
+.day-block ul { list-style: none; padding-left: 10px; }
+.day-block li { padding: 4px 0; cursor:pointer; }
+.detail-section { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+.detail-section h3 { margin-bottom: 6px; }
+.detail-section p { margin: 4px 0; }

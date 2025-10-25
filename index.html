@@ -22,11 +22,28 @@
 </form>
 
 <h2>Past Walks</h2>
+<button id="viewHistoryBtn">View Previous Entries</button>
 <div id="history"></div>
 
-<button id="exportCsv">Export All Walks (CSV)</button>
+<!-- History Viewer Overlay -->
+<div id="historyViewer" class="overlay" style="display:none;">
+  <div class="overlay-content">
+    <button id="closeHistoryBtn">Close</button>
+    <h2>Previous Walks</h2>
+    <div id="historyContainer"></div>
+  </div>
+</div>
 
-<!-- Section Viewer -->
+<!-- Entry Detail Viewer -->
+<div id="entryDetailViewer" class="overlay" style="display:none;">
+  <div class="overlay-content">
+    <button id="closeEntryDetailBtn">Close</button>
+    <h2 id="detailTitle"></h2>
+    <div id="detailContainer"></div>
+  </div>
+</div>
+
+<!-- Section Viewer (for swipe navigation & editing) -->
 <div id="sectionViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:1000; overflow:hidden;">
   <button id="addSectionViewerBtn" style="position:absolute; top:10px; left:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Add Section</button>
   <button id="closeSectionViewer" style="position:absolute; top:10px; right:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Close</button>

@@ -1,33 +1,18 @@
-body {
-  font-family: sans-serif;
-  padding: 10px;
-  margin: 0;
-  background: #f5f5f5;
-}
-h1, h2, h3 { color: #333; }
-label { display: block; margin-top: 5px; }
-input, textarea { width: 100%; padding: 5px; margin-top: 2px; }
-button { margin-top: 10px; padding: 10px 15px; background: #4CAF50; color: white; border: none; border-radius: 5px; }
-.section { background: white; padding: 10px; margin: 10px 0; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);}
-.walk-item {
-  background: white;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.walk-item.swiping { transition: none; }
-.section-card { min-width: 100%; padding: 20px; box-sizing: border-box; overflow-y: auto; }
-/* Overlays */
-.overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); z-index: 2000; display:flex; align-items:flex-start; justify-content:center; padding:20px; box-sizing:border-box; }
-.overlay .overlay-content { background:white; width:100%; max-width:720px; padding:15px; border-radius:6px; max-height:90vh; overflow:auto; }
-.week-block { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
-.day-block { margin-left: 15px; }
-.day-block ul { list-style: none; padding-left: 10px; }
-.day-block li { padding: 4px 0; cursor:pointer; }
-.detail-section { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
-.detail-section h3 { margin-bottom: 6px; }
-.detail-section p { margin: 4px 0; }
+/* Walk Journal CSS */
+body { font-family: sans-serif; margin:20px; }
+.section-card { padding:12px; border-radius:6px; margin-bottom:12px; }
+.section-card.Ambient { background-color: #e0f7fa; }
+.section-card.Frozen { background-color: #e1f5fe; }
+.section-card.ISB { background-color: #f3e5f5; }
+.section-card.FOTM { background-color: #fff3e0; }
+.section-card.Fridge { background-color: #e8f5e9; }
+.section-card.General { background-color: #f5f5f5; }
+.section-card h3 { cursor:pointer; }
+.section-content.collapsed { display:none; }
+textarea { width:100%; resize:vertical; min-height:60px; margin-top:4px; }
+button { padding:6px 12px; margin-top:4px; cursor:pointer; }
+#sectionContainer { display:flex; overflow-x:hidden; scroll-snap-type:x mandatory; transition: transform 0.3s ease; }
+.section-card { flex:0 0 100%; scroll-snap-align:start; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-right:12px; }
+body.dark-mode { background-color:#121212; color:#e0e0e0; }
+body.dark-mode textarea { background-color:#1e1e1e; color:#e0e0e0; border-color:#333; }
+@media(min-width:768px){ .section-card { flex:0 0 60%; margin:0 10%; } }

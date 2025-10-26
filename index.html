@@ -4,59 +4,52 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Walk Journal</title>
-<link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <h1>Walk Journal</h1>
 
 <form id="walkForm">
-  <label>Date:
-    <input type="date" id="walkDate" required>
-  </label>
+  <label for="walkDate">Date:</label>
+  <input type="date" id="walkDate"><br><br>
+
+  <label for="tagsInput">Tags (optional):</label>
+  <input type="text" id="tagsInput" placeholder="e.g. morning, fridge check"><br><br>
+
+  <label for="templateSelect">Templates:</label>
+  <select id="templateSelect"></select><br><br>
 
   <div id="sectionsContainer"></div>
-  <button type="button" id="addSection">Add Section</button>
+  <button type="button" id="addSection">Add Section</button><br><br>
+
   <button type="submit">Save Walk</button>
 </form>
 
-<h2>Past Walks</h2>
-<button id="viewHistoryBtn">View Previous Entries</button>
-<div id="history"></div>
+<button id="viewHistoryBtn">View History</button>
+<input type="text" id="historySearch" placeholder="Search history...">
 
-<!-- History Viewer Overlay -->
-<div id="historyViewer" class="overlay" style="display:none;">
-  <div class="overlay-content">
-    <button id="closeHistoryBtn">Close</button>
-    <h2>Previous Walks</h2>
-    <div id="historyContainer"></div>
+<div id="historyViewer" style="display:none;">
+  <button id="closeHistoryBtn">Close</button>
+  <div id="historyContainer">
+    <ul id="history"></ul>
   </div>
 </div>
 
-<!-- Entry Detail Viewer -->
-<div id="entryDetailViewer" class="overlay" style="display:none;">
-  <div class="overlay-content">
-    <button id="closeEntryDetailBtn">Close</button>
-    <h2 id="detailTitle"></h2>
-    <div id="detailContainer"></div>
-  </div>
+<div id="sectionViewer" style="display:none;">
+  <button id="closeSectionViewer">Close</button>
+  <div id="sectionContainer"></div>
+  <button id="addSectionViewerBtn">Add Section</button>
+  <button id="copyEntryBtn">Copy Entry</button>
 </div>
 
-<!-- Section Viewer (for swipe navigation & editing) -->
-<div id="sectionViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#fff; z-index:1000; overflow:hidden;">
-  <button id="addSectionViewerBtn" style="position:absolute; top:10px; left:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Add Section</button>
-  <button id="closeSectionViewer" style="position:absolute; top:10px; right:10px; padding:10px; background:#4CAF50; color:white; border:none; border-radius:5px;">Close</button>
-  <div id="sectionContainer" style="display:flex; width:100%; height:100%; transition:transform 0.3s ease;"></div>
+<div id="summaryViewer" style="display:none;">
+  <button id="closeSummaryBtn">Close</button>
+  <div id="summaryContent"></div>
 </div>
+
+<label for="restoreInput">Restore Backup:</label>
+<input type="file" id="restoreInput">
 
 <script src="app.js"></script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('Service Worker Registered'));
-}
-</script>
-
 </body>
 </html>

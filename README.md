@@ -1,2 +1,2 @@
-# Walk-joirnal
+# Walk-journal
 Walk journal

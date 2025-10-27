@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walk Journal - Version 2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Walk Journal</h1>
+
+<!-- Start page -->
+<div id="startPage">
+  <h2>Select Template to Start Walk</h2>
+  <select id="templateSelect">
+    <option value="">Select Template</option>
+    <option value="Standard Walk">Standard Walk</option>
+    <option value="Quick Check">Quick Check</option>
+  </select>
+  <button id="startWalkBtn">Start Walk</button>
+</div>
+
+<!-- Walk form (hidden until walk starts) -->
+<form id="walkForm" style="display:none;">
+  <label for="walkDate">Date:</label>
+  <input type="date" id="walkDate"><br><br>
+
+  <label for="tagsInput">Tags (optional):</label>
+  <input type="text" id="tagsInput" placeholder="e.g. morning, fridge check"><br><br>
+
+  <div id="sectionsContainer"></div>
+
+  <button type="submit">Save Walk</button>
+</form>
+
+<div style="margin-top:10px;">
+  <button id="viewHistoryBtn">View History</button>
+</div>
+
+<!-- History viewer -->
+<div id="historyViewer" style="display:none;">
+  <button id="closeHistoryBtn">Close</button>
+  <div id="historyContainer">
+    <ul id="history"></ul>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
